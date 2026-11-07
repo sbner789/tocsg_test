@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { Table } from "@/components";
 import type { TableColumn } from "@/components";
@@ -125,10 +125,6 @@ const CalculateShuttleBusCosts = () => {
         if (groupState <= 0) return;
         setGroup((prev: number[]) => [...prev, groupState]);
     };
-
-    useEffect(() => {
-        console.log({ group });
-    }, [groupState, group])
 
     const busSettingInputs = [
         { id: "runs", labelText: "운행 횟수 (R)", value: busSetting.runs },

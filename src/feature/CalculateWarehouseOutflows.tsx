@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { Table } from "@/components";
 import type { TableColumn } from "@/components";
@@ -95,10 +95,6 @@ const CalculateWarehouseOutflows = () => {
         setProductGroup((prev: number[][]) => [...prev, valueGroup])
         setValueGroup([]);
     };
-
-    useEffect(() => {
-        console.log({ productGroup });
-    }, [valueState, valueGroup, productGroup])
 
     const boxItemRows: BoxItemRow[] = valueGroup.map((value, index) => ({ order: index + 1, value }));
     const boxRows: BoxRow[] = productGroup.map((box, index) => ({
